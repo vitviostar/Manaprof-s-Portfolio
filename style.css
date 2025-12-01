@@ -1,0 +1,532 @@
+body {
+    background-color:black;
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center; 
+}
+header {
+    background: linear-gradient(135deg, #0F2027, #203A43, #2C5364);
+    box-shadow: 0 0 25px rgba(32, 74, 90, 0.8);
+    margin-left: 12%;
+    margin-right: 12%;
+    border-radius: 50%;
+    height: auto;
+    animation: float3 2s ease-in-out infinite;
+}
+@keyframes float3 {
+    0% { transform: translateX(0);}
+    50% { transform: translateX(-20px);}
+    100% { transform: translateX(0);}
+}
+.h1.show {
+    animation: fadeIn 5s infinite;
+}
+@keyframes fadeIn {
+0% { opacity:0; }
+30% { opacity:1; }
+70% { color: #00efff;}
+100% { opacity:0; }
+}
+.h2.show {
+    opacity: 0;
+    animation: fadeIn2 5s infinite;
+    animation-delay: 3s;
+}
+@keyframes fadeIn2 {
+    0% { opacity:0; }
+    30% { opacity:1; }
+    70% { color:blueviolet;}
+    100% { opacity:0; }
+}
+.nav a {
+    padding-right: 2em;
+}
+.nav a:hover {
+ text-decoration: none;
+ color: white;
+}
+.info.show {
+    animation: riseAndSettle 5s 2s ease-out forwards, pulse 3s 8s infinite;
+    transform: translateY(0);
+    opacity: 1;
+    width: auto;
+}
+@keyframes riseAndSettle {
+0% { 
+    transform:translateY( 200px);
+    opacity: 1;
+    width: auto;
+    color: purple;
+}
+30% { opacity: 0; }
+50% { 
+    opacity: 1;
+    width: auto;
+    color: violet;
+ }
+ 70% { opacity:0 }
+ 100% {
+    transform: translateY(0);
+    opacity: 1;
+    width: auto;
+ }
+}
+@keyframes pulse {
+    0% { color: blue; }
+    50% { color: blueviolet; }
+    70% { opacity: 0 }
+    90% { color: burlywood;}
+}
+.img2.show {
+    width: 20em;
+    height: 20em;
+    border-radius: 50%;
+    animation: fadeZoom 1.2s ease forwards, float1 6s ease-in-out infinite 1.2s;
+}
+@keyframes fadeZoom {
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes float1 {
+    0% 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+.typing {
+    margin-bottom: 10em;
+    font-family: monospace;
+    white-space: normal;
+}
+.line.show {
+    font-size:large;
+    width: fit-content;
+    overflow: hidden;
+    border-right: 2px solid;
+    animation: typing 4s steps(30) 1s 1 normal both,blink 0.7s infinite;
+}
+@keyframes typing{
+    from { width: 0%; }
+    to { width: 100%; }
+}
+@keyframes blink{
+    50% { border-color: transparent; }
+}
+.img1 {
+    margin-top: 5em;
+    margin-bottom: 6em;
+    animation: float 3s infinite ease-in-out;
+    background-size: cover;
+}
+@keyframes float {
+    0% 100% { transform: translateY(0);}
+    50% { transform: translateY(-20px);}
+}
+.img1 img {
+    border-radius: 50%;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.text1, .text2.show {
+    position: absolute;
+    color: #00efff;
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #00efff;
+    animation: typing1 4s steps(300) 1, blink 0.7s infinite;
+}
+@keyframes typing1 {
+ from {
+    width: 0;
+ }
+ to {
+    width: 10%;
+ }
+}
+@keyframes blink {
+    50% { border-color: transparent;}
+}
+.text1 {
+    top: -25px;
+    left: 50%;
+    transform: translateY(-50%);
+}
+.text2 {
+    bottom: -25px;
+    left: 50%;
+    transform: translateY(50%);
+}
+.contact {
+background-color:#00efff;
+height: 15em;
+margin-bottom: 10em;
+margin-right: 50%;
+max-width: 600px;
+border-radius: 20%;
+}
+.contact mark {
+   color: purple;
+   background-color:#0F2027;
+   border-radius: 20%;
+}
+.whatsapp {
+    background-color: #25D366;
+    border-radius: 30%;
+    height: 4em;
+    width: 8em;
+}
+.mobile1,
+.mobile2,
+.gmail,
+.press,
+.whatsapp,
+.project mark {
+    display: inline-block;
+    margin-bottom: 2px;
+}
+.mobile1 {
+    animation: float2 3s ease-in-out infinite;
+    color: black;
+    position: relative;
+    display:inline-block;
+    
+}
+.mobile2 {
+    animation: float2 3s ease-in-out infinite;
+}
+@keyframes float2 {
+    0% 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+.mobile1:hover {
+    text-decoration: underline;
+    color: #ff6A00;
+    animation: float4 3s ease-in-out infinite;
+}
+.mobile2:hover {
+    text-decoration: underline;
+    color: #ff007f;
+    animation: float4 3s ease-in-out infinite;
+}
+@keyframes float4 {
+    0% 100% { transform: translateX(0); }
+    50% { transform: translateX(-10px); }
+}
+.side-text {
+    position: absolute;
+    left: 120%;
+    top:50%;
+    background: #333;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    opacity: 0;
+    transform: translateX(8px) translateY(-50%);
+    visibility: hidden;
+    transition: opacity .3s ease, transform .3s ease, visibility 0s linear .3s;
+    z-index: 1000;
+}
+.side-text a {
+  display: inline-block;
+  margin: 0 4px;
+  padding: 6px 10px;
+  background: #25D366;
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 13px;
+}
+.side-text a:hover {
+  background: #128C7E;
+}
+.help {
+     background: linear-gradient(135deg, #0F2027, #203A43, #2C5364);
+     box-shadow: 0 0 25px rgba(32, 74, 90, 0.8);
+     max-width: 250px;
+     height: 15em;
+     border-radius: 50%;
+     margin-right: 50%;
+     margin-bottom: 5em;
+     animation: float5 3s ease-in-out infinite;
+}
+@keyframes float5 {
+    0% 100% { transform: translateY(0); }
+    50% { transform: translateY(-40px); }
+   }
+    .text {
+    text-align: right;
+    color: #00efff;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #00efff;
+    animation: typing2 20s steps(300) 1, blink1 0.7s infinite, float5 3s  ease-in-out infinite;
+}
+@keyframes typing2 {
+ from {
+    width: 0;
+ }
+ to {
+    width: 100%;
+ }
+}
+@keyframes blink1 {
+    50% { border-color: transparent;}
+}
+
+@media screen and (min-width:500px){
+    .text {
+       font-size: 19px;
+    }
+}
+@media screen and (min-width:600px){
+    .text {
+       font-size: 24px;
+    }
+}
+@media screen and (min-width:700px){
+    .text {
+       font-size: 29px;
+    }
+}
+@media screen and (min-width:800px){
+    .text {
+       font-size: 34px;
+    }
+}
+@media screen and (min-width:900px){
+    .text {
+       font-size: 39px;
+    }
+}
+@media screen and (min-width:1000px){
+    .text {
+       font-size: 44px;
+    }
+}
+@media screen and (min-width:1100px){
+    .text {
+       font-size: 49px;
+    }
+}
+@media screen and (min-width:1200px){
+    .text {
+       font-size: 54px;
+    }
+}
+@media screen and (min-width:1300px){
+    .text {
+       font-size: 59px;
+    }
+}
+@media screen and (min-width:1400px){
+    .text {
+       font-size: 64px;
+    }
+}
+@media screen and (min-width:1600px){
+    .text {
+       font-size: 69px;
+    }
+}
+.project {
+    background: linear-gradient(150deg,  #7f0edc, #e3b10c, #ae19b0);
+    box-shadow: 0 0 25px rgba(132, 134, 135, 0.8);
+    height: 200px;
+    margin-bottom: 6em;
+    border-radius: 20%;
+}
+.project p {
+    font-size: 30px;
+    text-decoration: underline;
+    text-decoration-color:#0F2027;
+}
+.skill {
+    margin-bottom: 30em;
+    height: 600px;
+   background: linear-gradient(150deg,  #8335e1, #0625ee, #8335e1);
+    box-shadow: 0 0 25px rgba(132, 134, 135, 0.8);
+}
+.html,
+.css,
+.c,
+.js {
+    height: 60px;
+    width: 60px;
+    background-color: #7f0edc;
+    border-radius: 20%;
+    margin-left: 50%;
+    margin-bottom:3em;
+}
+.html,
+.c {
+    animation: floatupdown 3s ease-in-out infinite, floatsideway 3s 3s ease-in-out infinite;
+}
+@keyframes floatupdown {
+    0% 100% { transform: translateY(0); }
+    50% { 
+        transform: translateY(-30px); 
+        
+    }
+}
+.css,
+.js {
+    animation: floatsideway 3s ease-in-out infinite, floatupdown 3s 3s ease-in-out infinite;
+}
+@keyframes floatsideway {
+    0% 100% { transform: translateX(0); }
+    50% { 
+        transform: translateX(-30px); 
+
+     }
+}
+.HTML,
+.C {
+     animation: floatupdown 3s ease-in-out infinite, floatsideway 3s 3s ease-in-out infinite;
+}
+.HTML {
+     margin-left: 65%;
+    }
+.C {
+    margin-left: 40%;
+} 
+.CSS,
+.JS {
+   animation: floatsideway 3s ease-in-out infinite, floatupdown 3s 3s ease-in-out infinite;
+}  
+.CSS {
+    margin-left: 63%;
+} 
+.JS {
+    margin-left: 45%;
+}
+.HTML,
+.CSS,
+.C,
+.JS {
+    overflow-wrap: break-word;
+}
+@media screen and (min-width: 500px) {
+    .HTML {
+        margin-left: 60%;
+    }
+    .CSS {
+        margin-left: 58%;
+    }
+    .C {
+        margin-left: 37%;
+    }
+    .JS {
+        margin-left: 41%;
+    }
+}
+@media screen and (min-width: 600px) {
+    .HTML {
+        margin-left: 55%;
+    }
+    .CSS {
+        margin-left: 53%;
+    }
+    .C {
+        margin-left: 34%;
+    }
+    .JS {
+        margin-left: 37%;
+    }
+}
+@media screen and (min-width: 700px) {
+    .HTML {
+        margin-left: 50%;
+    }
+    .CSS {
+        margin-left: 48%;
+    }
+    .C {
+        margin-left: 31%;
+    }
+    .JS {
+        margin-left: 34%;
+    }
+}
+@media screen and (min-width: 800px) {
+    .HTML {
+        margin-left: 45%;
+    }
+    .CSS {
+        margin-left: 43%;
+    }
+    .C {
+        margin-left: 28%;
+    }
+    .JS {
+        margin-left: 31%;
+    }
+}
+@media screen and (min-width: 900px) {
+    .HTML {
+        margin-left: 40%;
+    }
+    .CSS {
+        margin-left: 38%;
+    }
+    .C {
+        margin-left: 25%;
+    }
+    .JS {
+        margin-left: 28%;
+    }
+}
+@media screen and (min-width: 1000px) {
+    .HTML {
+        margin-left: 35%;
+    }
+    .CSS {
+        margin-left: 33%;
+    }
+    .C {
+        margin-left: 22%;
+    }
+    .JS {
+        margin-left: 25%;
+    }
+}
+@media screen and (min-width: 1100px) {
+    .HTML {
+        margin-left: 30%;
+    }
+    .CSS {
+        margin-left: 28%;
+    }
+    .C {
+        margin-left: 19%;
+    }
+    .JS {
+        margin-left: 22%;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .HTML {
+        margin-left: 25%;
+    }
+    .CSS {
+        margin-left: 23%;
+    }
+    .C {
+        margin-left: 15%;
+    }
+    .JS {
+        margin-left: 17%;
+    }
+}
+
+
+

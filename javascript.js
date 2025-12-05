@@ -42,6 +42,17 @@ document.addEventListener("DOMContentLoaded", () => {
         tip.style.transform = "translateX(8px) translateY(-50%)";
         tip.style.visibility = "hidden";
         tip.style.pointerEvents = "none";
+      });
+
+       // Mobile tap/click toggle
+    box.addEventListener("click", () => {
+      const visible = tip.style.opacity === "1";
+      tip.style.opacity = visible ? "0" : "1";
+      tip.style.visibility = visible ? "hidden" : "visible";
+      tip.style.transform = visible 
+        ? "translateX(8px) translateY(-50%)" 
+        : "translateX(0) translateY(-50%)";
+      clearTimeout(timeout);
       }, 2000);
     });
   });
@@ -61,9 +72,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const isMobile = /Mobi|Android/i.test(navigator.userAgent);
 
         if(isMobile) {
-            optionsContainer.innerHTML = `${simCall} | ${whatsappCall} | ${whatsappChat}`;
+            optionsContainer.innerHTML = `${simCall} | ${whatsappChat}`;
         } else {
            optionsContainer.innerHTML = `${whatsappChat}`;
         }
     }
+
 });

@@ -341,7 +341,7 @@ border-radius: 20%;
 .project {
     background: linear-gradient(150deg,  #7f0edc, #e3b10c, #ae19b0);
     box-shadow: 0 0 25px rgba(132, 134, 135, 0.8);
-    height: 600px;
+    height: 400px;
     margin-bottom: 6em;
     border-radius: 20%;
 }
@@ -442,6 +442,8 @@ border-radius: 20%;
     .JS {
         margin-left: 37%;
     }
+    .project {
+        height: 500px;
 }
 @media screen and (min-width: 700px) {
     .HTML {
@@ -536,6 +538,7 @@ border-radius: 20%;
     text-align: center;
   }
 }
+
 
 
 

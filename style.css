@@ -341,7 +341,7 @@ border-radius: 20%;
 .project {
     background: linear-gradient(150deg,  #7f0edc, #e3b10c, #ae19b0);
     box-shadow: 0 0 25px rgba(132, 134, 135, 0.8);
-    height: 400px;
+    height: 600px;
     margin-bottom: 6em;
     border-radius: 20%;
 }
@@ -536,6 +536,7 @@ border-radius: 20%;
     text-align: center;
   }
 }
+
 
 
 

@@ -21,16 +21,17 @@ document.addEventListener("DOMContentLoaded", () => {
   // Observe each element
   animatedElements.forEach(el => observer.observe(el));
 
-  // Tooltip logic
+ // Tooltip logic
   document.querySelectorAll(".mobile1").forEach(box => {
     let timeout;
     const tip = box.querySelector(".side-text");
     if (!tip) return;
 
+    // Desktop hover
     box.addEventListener("mouseenter", () => {
       clearTimeout(timeout);
       tip.style.opacity = "1";
-      tip.style.transform = "translateX(0) translateY(-50%)";
+      tip.style.transform = "translateX(-50%) translateY(0)";
       tip.style.visibility = "visible";
       tip.style.pointerEvents = "auto";
     });
@@ -39,43 +40,40 @@ document.addEventListener("DOMContentLoaded", () => {
       clearTimeout(timeout);
       timeout = setTimeout(() => {
         tip.style.opacity = "0";
-        tip.style.transform = "translateX(8px) translateY(-50%)";
+        tip.style.transform = "translateX(-50%) translateY(-10px)";
         tip.style.visibility = "hidden";
         tip.style.pointerEvents = "none";
-      });
+      }, 2000);
+    });
 
-       // Mobile tap/click toggle
+    // Mobile click/tap
     box.addEventListener("click", () => {
       const visible = tip.style.opacity === "1";
       tip.style.opacity = visible ? "0" : "1";
       tip.style.visibility = visible ? "hidden" : "visible";
-      tip.style.transform = visible 
-        ? "translateX(8px) translateY(-50%)" 
-        : "translateX(0) translateY(-50%)";
+      tip.style.transform = visible ? "translateX(-50%) translateY(-10px)" : "translateX(-50%) translateY(0)";
+      // Clear any existing timeout so it doesn't interfere
       clearTimeout(timeout);
-      }, 2000);
     });
   });
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-    const optionsContainer = document.getElementById("clickOptions");
-    if(optionsContainer ) {
-        const phoneNumber = "254799097143";
-        const phoneNumberIntl = "+254799097143";
+  const optionsContainer = document.getElementById("clickOptions");
+  if (optionsContainer) {
+    const phoneNumber = "254706935999";
+    const phoneNumberIntl = "+254706935999";
 
-        //links
-        const simCall = `<a href="tel:${phoneNumberIntl}">Call with SIM</a>`;
-        /*const whatsappCall = `<a href="whatsapp://call?number=${phoneNumber}">Call with WhatsApp</a>`;*/ // can't use this because whatsapp does not expose a public URL scheme for"directly starting a voice/video call."
-        const whatsappChat = `<a href="https://wa.me/${phoneNumber}?text=Hello%20I%20saw%20your%20portfolio" target="_blank">Open WhatsApp Chat</a>`;
+    // Links
+    const simCall = `<a href="tel:${phoneNumberIntl}">Call with SIM</a>`;
+    const whatsappChat = `<a href="https://wa.me/${phoneNumber}?text=Hello%20I%20saw%20your%20portfolio" target="_blank">Open WhatsApp Chat</a>`;
 
-        const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+    const isMobile = /Mobi|Android/i.test(navigator.userAgent);
 
-        if(isMobile) {
-            optionsContainer.innerHTML = `${simCall} | ${whatsappChat}`;
-        } else {
-           optionsContainer.innerHTML = `${whatsappChat}`;
-        }
+    if (isMobile) {
+      optionsContainer.innerHTML = `${simCall} | ${whatsappChat}`;
+    } else {
+      optionsContainer.innerHTML = `${whatsappChat}`;
     }
-
+  }
 });

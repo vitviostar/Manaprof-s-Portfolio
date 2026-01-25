@@ -52,7 +52,7 @@ header {
 }
 .nav {
     margin-bottom: 2em;
-    font-size: 2vw;
+    font-size: 4vw;
     background: linear-gradient(90deg, #11998e, #38ef7d);
     height: 5vw;
 }
@@ -555,6 +555,7 @@ border-radius: 20%;
     text-align: center;
   }
 }
+
 
 
 
